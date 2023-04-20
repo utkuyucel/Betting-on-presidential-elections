@@ -6,25 +6,25 @@ Experience the excitement of Turkish Presidential Elections with this Python-bas
 
 1. Clone the repository to your local machine:
 
-\```bash
+```bash
 git clone https://github.com/yourusername/Betting-on-turkish-presidential-elections.git
-\```
+```
 
 2. Install the required dependencies (if any).
 
 3. Navigate to the project directory:
 
-\```bash
+```bash
 cd Betting-on-turkish-presidential-elections
-\```
+```
 
 ## Usage
 
 1. Run the `main.py` script:
 
-\```bash
+```bash
 python3 main.py
-\```
+```
 
 2. Follow the prompts to place bets on various election outcomes.
 
