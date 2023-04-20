@@ -88,7 +88,7 @@ def main() -> None:
     for outcome, odd in odds.items():
         print(f'{outcome.name}: {odd:.2f}')
 
-        actual_outcome = ElectionOutcome.WAR
+    actual_outcome = ElectionOutcome.WAR
     results = betting_system.settle_bets(actual_outcome)
 
     print(f'\nElection outcome is: {actual_outcome.name}')
