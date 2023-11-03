@@ -57,6 +57,26 @@ class BettingSystem:
         results = [(winner.user, (winner.amount / total_correct_bets) * total_bet_amounts) for winner in winners]
         return results
 
+    @staticmethod
+    def print_odds(odds):
+        print("\nOdds for each outcome:")
+        for outcome, odd in odds.items():
+            print(f'{outcome.name}: {odd:.2f}')
+
+    @staticmethod
+    def print_winners(results):
+        if results:
+            print('\nWinners and their winnings:')
+            for user, winnings in results:
+                print(f'{user}: ₺{winnings:.2f}')
+        else:
+            print("\nNo winners this time.")
+
+    def place_and_print_bets(self, bet_placements):
+        for user, outcome, amount in bet_placements:
+            self.place_bet(user, outcome, amount)
+            print(f'{user} placed ₺{amount} bet on {outcome.name}.')
+
 
 def main() -> None:
     """Main function to simulate the betting system for an election."""
@@ -69,25 +89,20 @@ def main() -> None:
         ('HXXX', ElectionOutcome.TRUMP_WIN, 50),
         ('MXXX', ElectionOutcome.TRUMP_WIN, 50),
         ('GXXX', ElectionOutcome.TRUMP_WIN, 50),
-        ('DXXX', ElectionOutcome.BIDEN_WIN, 50),
+        ('DXXX', ElectionOutcome.BIDEN_WIN, 500),
     ]
 
-    for user, outcome, amount in bet_placements:
-        betting_system.place_bet(user, outcome, amount)
-        print(f'{user} placed ₺{amount} bet.')
+
+    betting_system.place_and_print_bets(bet_placements)  
 
     odds = betting_system.calculate_odds()
-    print("\nOdds for each outcome:")
-    for outcome, odd in odds.items():
-        print(f'{outcome.name}: {odd:.2f}')
+    betting_system.print_odds(odds)
 
     actual_outcome = ElectionOutcome.BIDEN_WIN
     results = betting_system.settle_bets(actual_outcome)
 
     print(f'\nElection outcome is: {actual_outcome.name}')
-    print('\nWinners and their winnings:')
-    for user, winnings in results:
-        print(f'{user}: ₺{winnings:.2f}')
+    betting_system.print_winners(results)
 
 
 if __name__ == "__main__":
