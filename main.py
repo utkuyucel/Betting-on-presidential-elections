@@ -4,15 +4,8 @@ from enum import Enum, auto
 
 class ElectionOutcome(Enum):
     """Enumeration for possible election outcomes."""
-    ERDOGAN_WIN_FIRST = auto()
-    OPPOSITE_WIN_FIRST = auto()
-    ERDOGAN_WIN_SECOND = auto()
-    OPPOSITE_WIN_SECOND = auto()
-    INCE_WIN_FIRST = auto()
-    INCE_WIN_SECOND = auto()
-    OGAN_WIN_FIRST = auto()
-    OGAN_WIN_SECOND = auto()
-    WAR = auto()
+    TRUMP_WIN = auto()
+    BIDEN_WIN = auto()
 
 
 class Election:
@@ -71,12 +64,12 @@ def main() -> None:
     betting_system = BettingSystem(election)
 
     bet_placements = [
-        ('UXXX', ElectionOutcome.ERDOGAN_WIN_FIRST, 50),
-        ('BXXX', ElectionOutcome.ERDOGAN_WIN_FIRST, 50),
-        ('HXXX', ElectionOutcome.ERDOGAN_WIN_FIRST, 50),
-        ('MXXX', ElectionOutcome.OPPOSITE_WIN_FIRST, 50),
-        ('GXXX', ElectionOutcome.OPPOSITE_WIN_FIRST, 50),
-        ('DXXX', ElectionOutcome.WAR, 50),
+        ('UXXX', ElectionOutcome.TRUMP_WIN, 50),
+        ('BXXX', ElectionOutcome.TRUMP_WIN, 50),
+        ('HXXX', ElectionOutcome.TRUMP_WIN, 50),
+        ('MXXX', ElectionOutcome.TRUMP_WIN, 50),
+        ('GXXX', ElectionOutcome.TRUMP_WIN, 50),
+        ('DXXX', ElectionOutcome.BIDEN_WIN, 50),
     ]
 
     for user, outcome, amount in bet_placements:
@@ -88,7 +81,7 @@ def main() -> None:
     for outcome, odd in odds.items():
         print(f'{outcome.name}: {odd:.2f}')
 
-    actual_outcome = ElectionOutcome.WAR
+    actual_outcome = ElectionOutcome.BIDEN_WIN
     results = betting_system.settle_bets(actual_outcome)
 
     print(f'\nElection outcome is: {actual_outcome.name}')
@@ -99,4 +92,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
