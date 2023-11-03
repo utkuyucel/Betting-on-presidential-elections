@@ -1,1 +1,11 @@
-A betting engine for calculating the odds and settling wagers based on the outcomes of a simulated election. This system enables users to place bets on various possible election results, computes the associated odds for each potential outcome using the aggregated bets, and distributes the winnings to the successful bettors proportional to their stakes once the actual result is declared. The software incorporates a class structure to represent elections, bets, and the overarching betting system, making use of enumerations for clear and maintainable outcome definitions.
+# Election Betting Engine
+
+A betting engine for calculating the odds and settling wagers based on the outcomes of a simulated election. Users can place bets on various potential outcomes, with the system responsible for managing these bets, computing odds, and ensuring winnings are allocated to the successful participants accordingly.
+
+## Features
+
+- Place bets on multiple election outcomes.
+- Calculate real-time odds for each outcome.
+- Settle bets and distribute winnings post-election result.
+- Straightforward, enum-based outcome definitions for clarity and maintainability.
+
