@@ -1,4 +1,4 @@
-# Election Betting Engine
+# Betting Engine
 
 A betting engine for calculating the odds and settling wagers based on the outcomes of a simulated options. Users can place bets on various potential outcomes, with the system responsible for managing these bets, computing odds, and ensuring winnings are allocated to the successful participants accordingly.
 
